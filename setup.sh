@@ -62,7 +62,7 @@ if [[ $SRCREV_FREESCALE_DISTRO != "auto" ]]; then
 fi
 
 echo "Cloning meta-reach"
-git clone https://github.com/sakoman/meta-reach.git sources/meta-reach
+git clone https://github.com/jmore-reachtech/meta-reach.git sources/meta-reach
 if [[ $SRCREV_REACH != "auto" ]]; then
 	cd sources/meta-reach
 	git checkout $SRCREV_REACH
