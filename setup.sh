@@ -6,8 +6,9 @@ SRCREV_POKY=1cab405d88149fd63322a867c6adb4a80ba68db3
 SRCREV_OE=6094ae18c8a35e5cc9998ac39869390d7f3bb1e2
 SRCREV_FREESCALE=9704df97f08cf5895e2f5bcfb33f1a53d10c7704
 SRCREV_FREESCALE_DISTRO=771fb6d4c0c9530083fcc8c5452270bb9b3915ba
-SRCREV_REACH=041c6e96e00c6af3d0ce968f90ae7a43a5101d81
+SRCREV_REACH=2c01ba2463036020b86d5b0e566c25328c282d2a
 SRCREV_QT5=201fcf27cf07d60b7d6ab89c7dcefe2190217745
+SRCREV_MENDER=b411e6078e7bffece46b7ebb64cbb8062a15ef46
 
 if [ "X$1" = "Xhelp" ]; then
 	echo ""
@@ -74,6 +75,14 @@ git clone https://github.com/meta-qt5/meta-qt5.git sources/meta-qt5
 if [[ $SRCREV_QT5 != "auto" ]]; then
 	cd sources/meta-qt5
 	git checkout $SRCREV_QT5
+	cd ../..
+fi
+
+echo "Cloning meta-mender"
+git clone https://github.com/mendersoftware/meta-mender.git sources/meta-mender
+if [[ $SRCREV_MENDER != "auto" ]]; then
+	cd sources/meta-mender
+	git checkout $SRCREV_MENDER
 	cd ../..
 fi
 
