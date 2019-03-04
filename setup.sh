@@ -7,7 +7,7 @@ SRCREV_OE=6094ae18c8a35e5cc9998ac39869390d7f3bb1e2
 SRCREV_FREESCALE=9704df97f08cf5895e2f5bcfb33f1a53d10c7704
 SRCREV_FREESCALE_DISTRO=771fb6d4c0c9530083fcc8c5452270bb9b3915ba
 SRCREV_REACH=1f94ae058b5d9e6c60a8b9f2cd04fc57011acf96
-SRCREV_QT5=201fcf27cf07d60b7d6ab89c7dcefe2190217745
+SRCREV_QT5=439f7be65f681d4e45f30571082e38791cca2ef2
 SRCREV_MENDER=b411e6078e7bffece46b7ebb64cbb8062a15ef46
 
 if [ "X$1" = "Xhelp" ]; then
@@ -71,7 +71,7 @@ if [[ $SRCREV_REACH != "auto" ]]; then
 fi
 
 echo "Cloning meta-qt5"
-git clone https://github.com/meta-qt5/meta-qt5.git sources/meta-qt5
+git clone git://code.qt.io/yocto/meta-qt5.git sources/meta-qt5
 if [[ $SRCREV_QT5 != "auto" ]]; then
 	cd sources/meta-qt5
 	git checkout $SRCREV_QT5
