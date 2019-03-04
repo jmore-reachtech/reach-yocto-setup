@@ -12,7 +12,7 @@ $ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
 
 Once the prerequisite packages are installed, create a working directory and clone the build setup script in this repository:
 
-$ git clone git@github.com:sakoman/setup-reach.git
+$ git clone git@github.com:jmore-reachtech/reach-yocto-setup.git
 
 Now create a directory to store the Yocto source downloads and the build shared state. This data will persist across builds, and its use will dramatically decrease subsequent build times.
 
@@ -20,7 +20,7 @@ $ mkdir ~/yocto-files-thud
 
 Now cd into the build setup directory and run the script:
 
-$ cd setup-reach
+$ cd reach-yocto-setup
 
 $ ./setup.sh ~/yocto-files-thud
 
@@ -39,7 +39,7 @@ If the upstream metadata changes due to the addition of a new feature or a bug f
 
 First enter your build directory and update the setup script (just in case that has changed too):
 
-$ cd setup-reach/
+$ cd reach-yocto-setup/
 
 $ git pull
 
