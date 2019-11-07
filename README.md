@@ -2,13 +2,14 @@ This repository contains a script to automate much of the build setup.
 
 Before cloning this repository you should make sure your development machine has all the required packages installed.  This is detailed on the Yocto Project web site on this page (under the "The Build Host Packages" section):
 
-https://www.yoctoproject.org/docs/2.6/brief-yoctoprojectqs/brief-yoctoprojectqs.html
+https://www.yoctoproject.org/docs/2.7/brief-yoctoprojectqs/brief-yoctoprojectqs.html
 
 For example, the command to do this for the Ubuntu distribution is:
 
 $ sudo apt-get install gawk wget git-core diffstat unzip texinfo gcc-multilib \
      build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
-     xz-utils debianutils iputils-ping libsdl1.2-dev xterm
+     xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev \
+     xterm
 
 Once the prerequisite packages are installed, create a working directory and clone the build setup script in this repository:
 
@@ -16,13 +17,13 @@ $ git clone git@github.com:jmore-reachtech/reach-yocto-setup.git
 
 Now create a directory to store the Yocto source downloads and the build shared state. This data will persist across builds, and its use will dramatically decrease subsequent build times.
 
-$ mkdir ~/yocto-files-thud
+$ mkdir ~/yocto-files-warrior
 
 Now cd into the build setup directory and run the script:
 
 $ cd reach-yocto-setup
 
-$ ./setup.sh ~/yocto-files-thud
+$ ./setup.sh ~/yocto-files-warrior
 
 The script will then automatically clone all the required meta-data. When it is complete you can set up the build environment and start a build:
 

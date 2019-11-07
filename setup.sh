@@ -2,13 +2,14 @@
 
 set -e
 
-SRCREV_POKY=1cab405d88149fd63322a867c6adb4a80ba68db3
-SRCREV_OE=6094ae18c8a35e5cc9998ac39869390d7f3bb1e2
-SRCREV_FREESCALE=9704df97f08cf5895e2f5bcfb33f1a53d10c7704
-SRCREV_FREESCALE_DISTRO=771fb6d4c0c9530083fcc8c5452270bb9b3915ba
-SRCREV_REACH=2bd9a695ab3a84cd2eb8a0d226e45ea4d0461eae
-SRCREV_QT5=201fcf27cf07d60b7d6ab89c7dcefe2190217745
-SRCREV_MENDER=b411e6078e7bffece46b7ebb64cbb8062a15ef46
+SRCREV_POKY=6d2e12e79211b31cdf5ea824fb9a8be54ba9a9eb
+SRCREV_OE=3bdbf72e3a4bf18a4a2c7afbde4f7ab773aeded9
+SRCREV_FREESCALE=2142f7ded1b3115ccc21f7575fd83e2376247193
+SRCREV_FREESCALE_DISTRO=d4e77ea682fa10d0d54a723b3d3099c44fc5e95c
+SRCREV_REACH=4790fc1df9b7a83179065708fe3ce38d93f8ada5
+SRCREV_QT5=dc2dedef9961950b88f4245ba7499538ec4244ab
+SRCREV_MENDER=0df2ee7b9108f22d249bae644cd1fee06dc19b5c
+SRCREV_VIRTUALIZATION=e1f24ea8e77f8a3c3266264dd71417c8f9661f89
 
 if [ "X$1" = "Xhelp" ]; then
 	echo ""
@@ -83,6 +84,14 @@ git clone https://github.com/mendersoftware/meta-mender.git sources/meta-mender
 if [[ $SRCREV_MENDER != "auto" ]]; then
 	cd sources/meta-mender
 	git checkout $SRCREV_MENDER
+	cd ../..
+fi
+
+echo "Cloning meta-virtualization"
+git clone git://git.yoctoproject.org/meta-virtualization sources/meta-virtualization
+if [[ $SRCREV_VIRTUALIZATION != "auto" ]]; then
+	cd sources/meta-virtualization
+	git checkout $SRCREV_VIRTUALIZATION
 	cd ../..
 fi
 
