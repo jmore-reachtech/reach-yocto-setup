@@ -46,7 +46,7 @@ $ git pull
 
 Now simply re-run the script:
 
-$ ./setup.sh ~/yocto-files
+$ ./setup.sh ~/yocto-files-warrior
 
 The script will remove the old metadata and temporary build files, and then re-clone all required metadata.  It will not delete the downloaded source cache nor the shared-state files.  This will allow very rapid builds after the metadata update.
 
