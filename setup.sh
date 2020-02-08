@@ -56,7 +56,7 @@ if [[ $SRCREV_FREESCALE != "auto" ]]; then
 fi
 
 echo "Cloning meta-freescale-distro"
-git clone git@github.com:Freescale/meta-freescale-distro.git sources/meta-freescale-distro
+git clone https://github.com/Freescale/meta-freescale-distro.git sources/meta-freescale-distro
 if [[ $SRCREV_FREESCALE_DISTRO != "auto" ]]; then
 	cd sources/meta-freescale-distro
 	git checkout $SRCREV_FREESCALE_DISTRO
